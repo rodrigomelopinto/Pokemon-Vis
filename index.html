@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Pokemon TCG</title>
+</head>
+
+<body onload="init()">
+  <div>
+    <div style="width: 33%; float: left">
+      <svg style="height: 20px;"></svg>
+    </div>
+    <div style="width: 33%; float: left; text-align: center;">
+    </div>
+    <div style="width: 33%; float: left">
+      <svg style="height: 20px;"></svg>
+    </div>
+  </div>
+  <div>
+    <div style="position:absolute;left: 13%; bottom: 50.5%;width: 41.7%; height: 49%; float: left;"><svg id="vi1"></svg></div>
+    <div style="position:absolute;right: 42%; top:50%;width: 50%; float: left"><svg id="vi3"></svg></div>
+    <div style="position:absolute;left: 55%; top: 2%;width: 50%; float: left"><svg id="vi2"></svg></div>
+    <div style="border-left: 2px solid black;height: 99%;position:absolute;left: 17%; top:0.5%"></div>
+    <div style="border-left: 2px solid black;height: 99%;position:absolute;left: 54.5%;top:0.5%"></div>
+    <div style="border-left: 2px solid black;height: 99%;position:absolute;left: 99.7%;top:0.5%"></div>
+    <div style="border-top: 2px solid black;width: 37.6%;position:absolute;left: 17%;top: 49.5%"></div>
+    <div style="border-top: 2px solid black;width: 82.7%;position:absolute;left: 17%;top: 0.5%"></div>
+    <div style="border-top: 2px solid black;width: 82.7%;position:absolute;left: 17%;top: 99.5%"></div>
+  </div>
+  <img src="./Images/Bulbassaur.jpg" alt="Pokemon" style="position:absolute;top: 0%;right: 84%;float:left;">
+  <img src="./Images/Squirtle.png" alt="Pokemon" style="position:absolute;bottom: 0%;left: 1%;float:left;width:200px; 
+  height:250px;">
+
+
+  <div class="wrapper">
+    <div class="search-input">
+      <input id="myInput" type="text" placeholder="Search" value="">
+      <div class="autocom-box">
+      </div>
+    </div>
+  </div>
+  <button type="button" class="button">Go</button>
+  <button type="button2" class="button2" onclick="clean()">Reset</button>
+  <script>
+    function clean(){
+      posarr = [];
+      sMap = {};
+      attr = [[90,0], [200,0], [170,0], [5.0, 0]];
+      flag = 0;
+      selectedType = "none";
+
+      selectedCat1 = [];
+      dimOrder1 = ["evolution","rarity","resistances","types","weaknesses"];
+      selIds1 = [];
+      selectedCat2 = [];
+      dimOrder2 = ["evolution","rarity","resistances","types","weaknesses"];
+      selIds2 = [];
+      dimensionOrder = ["evolution","rarity","resistances","types","weaknesses"];
+      document.getElementById('myInput').value = '';
+      
+      const vi1 = document.getElementById('vi1');
+      const vi2 = document.getElementById('vi2');
+      const vi3 = document.getElementById('vi3');
+
+      vi1.replaceChildren();
+      vi2.replaceChildren();
+      vi3.replaceChildren();
+      init()
+    }
+  </script> 
+
+  <link rel="stylesheet" href="./searchbar/style.css">
+  <script src="./searchbar/suggestions.js"></script>
+  <script src="script.js"></script>
+  <script src="./Idioms/parsets.js"></script>
+  <script src="./Idioms/boxplot.js"></script>
+  <script src="./Idioms/paracoor.js"></script>
+  <script src="d3.v7.min.js"></script>
+  <link rel="stylesheet" href="./parsets/d3.parsets.css">
+  <script src="./parsets/d3.parsets.js"></script>
+</body>
+
+</html>
